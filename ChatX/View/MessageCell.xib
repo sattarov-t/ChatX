@@ -11,21 +11,28 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ReusableCell" rowHeight="72" id="KGk-i7-Jjw" customClass="MessageCell" customModule="ChatX" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="541" height="72"/>
+        <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ReusableCell" rowHeight="151" id="KGk-i7-Jjw" customClass="MessageCell" customModule="ChatX" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="541" height="151"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="541" height="72"/>
+                <rect key="frame" x="0.0" y="0.0" width="541" height="151"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tly-hn-Dc4">
-                        <rect key="frame" x="10" y="10" width="521" height="52"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tly-hn-Dc4">
+                        <rect key="frame" x="10" y="10" width="521" height="131"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="woman" translatesAutoresizingMaskIntoConstraints="NO" id="qCf-mD-yJO" userLabel="Left Image View">
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="jdW-go-a2P"/>
+                                    <constraint firstAttribute="height" constant="40" id="z8Z-po-hVv"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="0vr-At-bjl">
-                                <rect key="frame" x="0.0" y="0.0" width="461" height="52"/>
+                                <rect key="frame" x="60" y="0.0" width="401" height="121"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTQ-b8-IWu">
-                                        <rect key="frame" x="10" y="10" width="441" height="32"/>
+                                        <rect key="frame" x="10" y="10" width="381" height="101"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -40,13 +47,18 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man" translatesAutoresizingMaskIntoConstraints="NO" id="wbp-X1-pZE">
-                                <rect key="frame" x="481" y="6" width="40" height="40"/>
+                                <rect key="frame" x="481" y="0.0" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="scx-5h-IHr"/>
                                     <constraint firstAttribute="height" constant="40" id="yXD-iU-vG7"/>
                                 </constraints>
                             </imageView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="wbp-X1-pZE" firstAttribute="leading" secondItem="0vr-At-bjl" secondAttribute="trailing" constant="20" id="0yW-6g-rxH"/>
+                            <constraint firstAttribute="bottom" secondItem="0vr-At-bjl" secondAttribute="bottom" constant="10" id="Lou-WF-DoG"/>
+                            <constraint firstItem="0vr-At-bjl" firstAttribute="leading" secondItem="qCf-mD-yJO" secondAttribute="trailing" constant="20" id="VbK-Rt-BM5"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
@@ -59,14 +71,16 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="label" destination="oTQ-b8-IWu" id="7Gq-5D-cam"/>
+                <outlet property="leftImageView" destination="qCf-mD-yJO" id="kWq-HW-2jB"/>
                 <outlet property="messageBuble" destination="0vr-At-bjl" id="bn5-Jn-X1g"/>
                 <outlet property="rightImageView" destination="wbp-X1-pZE" id="9Kz-OE-3b4"/>
             </connections>
-            <point key="canvasLocation" x="-29.770992366412212" y="-20.422535211267608"/>
+            <point key="canvasLocation" x="-29.770992366412212" y="7.394366197183099"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="man" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="woman" width="100" height="100"/>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
